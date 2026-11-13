@@ -1,0 +1,17 @@
+{
+  "seed": 20261115,
+  "training_variants": 10,
+  "canonicalization": "SHA-256 of one sorted-key compact JSON object plus newline per episode, in file order",
+  "splits": {
+    "train": {
+      "games": 15650,
+      "decisions": 59823,
+      "semantic_sha256": "6a3cc699cc8770716f5e35b35049efda266619a72ad1c35d4728a4c107505de4"
+    },
+    "validation": {
+      "games": 250,
+      "decisions": 1079,
+      "semantic_sha256": "22849809d1db750273f455ca428b53b5381576575f6767d15788990d3d6718ab"
+    }
+  }
+}

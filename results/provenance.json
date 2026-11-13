@@ -1,0 +1,1003 @@
+{
+  "source_root": "FINAL",
+  "runs": {
+    "PSL-head": {
+      "last_update": 1814,
+      "checkpoint": "checkpoints/PSL-head/step_01100",
+      "source_run": "sft/PSL-head",
+      "included_through_iteration": null,
+      "status": "stopped",
+      "last_complete_iteration": null,
+      "last_validation_step": 1800,
+      "last_validation_iteration": null,
+      "validation_count": 37,
+      "configuration": {
+        "stage": "sl",
+        "data_sha256": "3fefbd1f540f688083b476db0047abd42344efff2df48233791cd9cd8772aca8",
+        "games_per_step": 4,
+        "lr": 0.0001,
+        "warmup": 20,
+        "micro_batch": 1,
+        "eval_secrets": 250,
+        "eval_seeds": [
+          1001,
+          1002
+        ],
+        "target_rule": "public-singleton-and-offered-v1",
+        "head_lr": 0.0002,
+        "consistency_coef": 0.0,
+        "consistency_seed": 20261118,
+        "eval_batch": 8,
+        "eval_every": 50,
+        "seed": 20261115,
+        "model_spec": {
+          "model_id": "Qwen/Qwen3.6-35B-A3B",
+          "rank": 16,
+          "alpha": 32,
+          "head_width": 256,
+          "lora_targets": ".*\\.(q_proj|k_proj|v_proj|o_proj|in_proj_qkv|in_proj_z|in_proj_b|in_proj_a|out_proj)",
+          "architecture": "contextual-pointer-v1",
+          "head_seed": 20261115,
+          "adapted_module_count": 190,
+          "pointer_marker_ids": {
+            "<|fim_prefix|>": 248060,
+            "<|fim_middle|>": 248061,
+            "<|box_start|>": 248049,
+            "<|box_end|>": 248050,
+            "<|fim_suffix|>": 248062
+          }
+        }
+      }
+    },
+    "PSL-head-consloss": {
+      "last_update": 1138,
+      "checkpoint": "checkpoints/PSL-head-consloss/step_01100",
+      "source_run": "sft/PSL-head-consloss",
+      "included_through_iteration": null,
+      "status": "stopped",
+      "last_complete_iteration": null,
+      "last_validation_step": 1100,
+      "last_validation_iteration": null,
+      "validation_count": 23,
+      "configuration": {
+        "stage": "sl",
+        "data_sha256": "3fefbd1f540f688083b476db0047abd42344efff2df48233791cd9cd8772aca8",
+        "games_per_step": 4,
+        "lr": 0.0001,
+        "warmup": 20,
+        "micro_batch": 1,
+        "eval_secrets": 250,
+        "eval_seeds": [
+          1001,
+          1002
+        ],
+        "target_rule": "public-singleton-and-offered-v1",
+        "head_lr": 0.0002,
+        "consistency_coef": 0.05,
+        "consistency_seed": 20261118,
+        "eval_batch": 8,
+        "eval_every": 50,
+        "seed": 20261115,
+        "model_spec": {
+          "model_id": "Qwen/Qwen3.6-35B-A3B",
+          "rank": 16,
+          "alpha": 32,
+          "head_width": 256,
+          "lora_targets": ".*\\.(q_proj|k_proj|v_proj|o_proj|in_proj_qkv|in_proj_z|in_proj_b|in_proj_a|out_proj)",
+          "architecture": "contextual-pointer-v1",
+          "head_seed": 20261115,
+          "adapted_module_count": 190,
+          "pointer_marker_ids": {
+            "<|fim_prefix|>": 248060,
+            "<|fim_middle|>": 248061,
+            "<|box_start|>": 248049,
+            "<|box_end|>": 248050,
+            "<|fim_suffix|>": 248062
+          }
+        }
+      }
+    },
+    "LM-head": {
+      "last_update": 1259,
+      "checkpoint": "checkpoints/LM-head/step_01100",
+      "source_run": "sft/lm-head-readout",
+      "included_through_iteration": null,
+      "status": "stopped",
+      "last_complete_iteration": null,
+      "last_validation_step": 1250,
+      "last_validation_iteration": null,
+      "validation_count": 26,
+      "configuration": {
+        "stage": "sl",
+        "data_sha256": "3fefbd1f540f688083b476db0047abd42344efff2df48233791cd9cd8772aca8",
+        "games_per_step": 4,
+        "lr": 0.0001,
+        "warmup": 20,
+        "micro_batch": 1,
+        "eval_secrets": 250,
+        "eval_seeds": [
+          1001,
+          1002
+        ],
+        "target_rule": "public-singleton-and-offered-v1",
+        "head_lr": 0.0001,
+        "consistency_coef": 0.0,
+        "consistency_seed": 20261118,
+        "eval_batch": 8,
+        "eval_every": 50,
+        "seed": 20261115,
+        "model_spec": {
+          "model_id": "Qwen/Qwen3.6-35B-A3B",
+          "rank": 16,
+          "alpha": 32,
+          "head_width": 256,
+          "lora_targets": ".*\\.(q_proj|k_proj|v_proj|o_proj|in_proj_qkv|in_proj_z|in_proj_b|in_proj_a|out_proj)",
+          "architecture": "vocabulary-label-lm-head-v1",
+          "head_seed": 20261115,
+          "adapted_module_count": 190,
+          "lm_head_labels": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h",
+            "i",
+            "j",
+            "k",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "q",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "w",
+            "x",
+            "y",
+            "z",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "+",
+            "/"
+          ],
+          "lm_head_label_ids": [
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            10,
+            14
+          ],
+          "lm_head_marker": "Next option:\n",
+          "lm_head_marker_ids": [
+            5666,
+            2904,
+            25,
+            198
+          ],
+          "lm_head_trainable_rows": 64,
+          "lm_head_initialization": "selected-pretrained-vocabulary-rows",
+          "lm_head_compute_dtype": "torch.bfloat16"
+        }
+      }
+    },
+    "RL-A": {
+      "last_update": 96,
+      "checkpoint": "checkpoints/RL-A/iteration_00012",
+      "source_run": "rl/cons1100_probe_study/D_curriculum_grpo_probe",
+      "included_through_iteration": 12,
+      "status": "stopped",
+      "last_complete_iteration": 12,
+      "last_validation_step": 96,
+      "last_validation_iteration": 12,
+      "validation_count": 4,
+      "configuration": {
+        "checkpoint_model_spec": {
+          "model_id": "Qwen/Qwen3.6-35B-A3B",
+          "rank": 16,
+          "alpha": 32,
+          "head_width": 256,
+          "lora_targets": ".*\\.(q_proj|k_proj|v_proj|o_proj|in_proj_qkv|in_proj_z|in_proj_b|in_proj_a|out_proj)",
+          "architecture": "contextual-pointer-v1",
+          "head_seed": 20261115,
+          "adapted_module_count": 190,
+          "pointer_marker_ids": {
+            "<|fim_prefix|>": 248060,
+            "<|fim_middle|>": 248061,
+            "<|box_start|>": 248049,
+            "<|box_end|>": 248050,
+            "<|fim_suffix|>": 248062
+          }
+        },
+        "seed": 2026111301,
+        "iterations": 24,
+        "games_per_secret": 8,
+        "games_per_iteration": 128,
+        "games_per_optimizer_update": 16,
+        "reward": {
+          "win": 1.0,
+          "loss": 0.0,
+          "timing": "after complete game only"
+        },
+        "sampling_temperature": 1.2,
+        "optimizer": {
+          "name": "AdamW",
+          "lora_lr": 1e-05,
+          "head_lr": 2e-05,
+          "weight_decay": 0.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "schedule": "linear warmup for 16 optimizer updates, then constant",
+          "warmup_updates": 16,
+          "global_gradient_clip_norm": 1.0
+        },
+        "ppo_ratio_clip": 0.2,
+        "reference_kl": {
+          "coefficient": 0.05,
+          "direction": "KL(current || frozen starting checkpoint)",
+          "exact_over_all_options": true,
+          "temperature": 1.0,
+          "normalization": "sum over observed decisions divided by (6 * complete_games_in_update)",
+          "freeze": "both LoRA adapter and pointer head; never move reference"
+        },
+        "consistency": {
+          "coefficient": 0.05,
+          "temperature": 1.0,
+          "loss": "0.5 * (KL(p || word-aligned q) + KL(word-aligned q || p))",
+          "permutations_per_training_request": 1,
+          "normalization": "sum over observed decisions divided by (6 * complete_games_in_update)"
+        },
+        "probe_auxiliary": {
+          "coefficient": 0.1,
+          "target_source": "postgame public history, all 2315 public answers, offered words; never actual secret",
+          "eligibility": "turn == 5 and N > 2 and max(Q5) > max(Q5 of offered consistent words) + 1e-12",
+          "value": "Q5(a) = number of nonempty exact-feedback buckets induced on S by a / len(S)",
+          "target": "all offered actions within 1e-12 of maximum Q5",
+          "loss": "-log(sum(policy_probability[a] for a in optimal_set)) at temperature 1",
+          "normalization": "mean over eligible states in these completed games, separate from easy states",
+          "empty_eligible_set": "zero loss; explicitly log zero count"
+        },
+        "curriculum": {
+          "hard_secret_fraction": 0.5,
+          "hard_pool": "../mining/hard_train_secrets.json (to be generated)",
+          "selection_unit": "secret, not duplicated history",
+          "fixed_pool_across_all_iterations": true,
+          "uniform_component": "uniform over all 1565 training secrets",
+          "exclude_duplicate_secrets_within_iteration": true
+        },
+        "stage": "complete_game_probe_rl_v1"
+      }
+    },
+    "RL-B": {
+      "last_update": 96,
+      "checkpoint": "checkpoints/RL-B/iteration_00012",
+      "source_run": "rl/cons1100_lowinfo_penalty/E_curriculum_grpo_probe_lowinfo",
+      "included_through_iteration": 12,
+      "status": "stopped",
+      "last_complete_iteration": 12,
+      "last_validation_step": 96,
+      "last_validation_iteration": 12,
+      "validation_count": 4,
+      "configuration": {
+        "checkpoint_model_spec": {
+          "model_id": "Qwen/Qwen3.6-35B-A3B",
+          "rank": 16,
+          "alpha": 32,
+          "head_width": 256,
+          "lora_targets": ".*\\.(q_proj|k_proj|v_proj|o_proj|in_proj_qkv|in_proj_z|in_proj_b|in_proj_a|out_proj)",
+          "architecture": "contextual-pointer-v1",
+          "head_seed": 20261115,
+          "adapted_module_count": 190,
+          "pointer_marker_ids": {
+            "<|fim_prefix|>": 248060,
+            "<|fim_middle|>": 248061,
+            "<|box_start|>": 248049,
+            "<|box_end|>": 248050,
+            "<|fim_suffix|>": 248062
+          }
+        },
+        "seed": 2026111301,
+        "iterations": 24,
+        "games_per_secret": 8,
+        "games_per_iteration": 128,
+        "games_per_optimizer_update": 16,
+        "reward": {
+          "win": 1.0,
+          "loss": 0.0,
+          "timing": "after complete game only",
+          "low_information_penalty_per_turn": 0.1,
+          "turns": [
+            4,
+            5
+          ],
+          "rule": "non-winning, more than one answer remains afterward, eliminates <=1 answer, and another offered word has strictly smaller public expected posterior size",
+          "maximum_penalty_per_game": 0.2,
+          "training_reward": "binary_win - 0.1 * qualifying_turn_count",
+          "selection_metric": "unshaped full-game validation wins"
+        },
+        "sampling_temperature": 1.2,
+        "optimizer": {
+          "name": "AdamW",
+          "lora_lr": 1e-05,
+          "head_lr": 2e-05,
+          "weight_decay": 0.0,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "schedule": "linear warmup for 16 optimizer updates, then constant",
+          "warmup_updates": 16,
+          "global_gradient_clip_norm": 1.0
+        },
+        "ppo_ratio_clip": 0.2,
+        "reference_kl": {
+          "coefficient": 0.05,
+          "direction": "KL(current || frozen starting checkpoint)",
+          "exact_over_all_options": true,
+          "temperature": 1.0,
+          "normalization": "sum over observed decisions divided by (6 * complete_games_in_update)",
+          "freeze": "both LoRA adapter and pointer head; never move reference"
+        },
+        "consistency": {
+          "coefficient": 0.05,
+          "temperature": 1.0,
+          "loss": "0.5 * (KL(p || word-aligned q) + KL(word-aligned q || p))",
+          "permutations_per_training_request": 1,
+          "normalization": "sum over observed decisions divided by (6 * complete_games_in_update)"
+        },
+        "probe_auxiliary": {
+          "coefficient": 0.1,
+          "target_source": "postgame public history, all 2315 public answers, offered words; never actual secret",
+          "eligibility": "turn == 5 and N > 2 and max(Q5) > max(Q5 of offered consistent words) + 1e-12",
+          "value": "Q5(a) = number of nonempty exact-feedback buckets induced on S by a / len(S)",
+          "target": "all offered actions within 1e-12 of maximum Q5",
+          "loss": "-log(sum(policy_probability[a] for a in optimal_set)) at temperature 1",
+          "normalization": "mean over eligible states in these completed games, separate from easy states",
+          "empty_eligible_set": "zero loss; explicitly log zero count"
+        },
+        "curriculum": {
+          "hard_secret_fraction": 0.5,
+          "hard_pool": "FINAL/rl/cons1100_probe_study/mining/hard_train_secrets.json",
+          "selection_unit": "secret, not duplicated history",
+          "fixed_pool_across_all_iterations": true,
+          "uniform_component": "uniform over all 1565 training secrets",
+          "exclude_duplicate_secrets_within_iteration": true
+        },
+        "stage": "complete_game_probe_lowinfo_rl_v1"
+      }
+    }
+  },
+  "sources": {
+    "sft/PSL-head/configuration.json": {
+      "sha256": "8030eb78d4a092d674a1c8f1c586d46acf7835e7675d75241dcf74c30b980a41",
+      "bytes": 1804
+    },
+    "sft/PSL-head/log.jsonl": {
+      "sha256": "7a3265c9c60ff012d454cc73747e5652dbf353623fd8b34eb606d7f81c5b2d80",
+      "bytes": 2949337
+    },
+    "sft/PSL-head-consloss/configuration.json": {
+      "sha256": "48574f7fce16fbc8ca8c1ae1a4528c064a07b621219ad34660931a2e22fe80e7",
+      "bytes": 1805
+    },
+    "sft/PSL-head-consloss/log.jsonl": {
+      "sha256": "d3ca3f2cd8e284d861f4ef34201ea7da095195b6066ef3f821f2cd11f32bd282",
+      "bytes": 1923411
+    },
+    "sft/lm-head-readout/configuration.json": {
+      "sha256": "fd8107ff2bf53168321eb9bd8d9c4b7e8fd7b7c88d064cda855da3a1253c5e11",
+      "bytes": 3302
+    },
+    "sft/lm-head-readout/log.jsonl": {
+      "sha256": "80ce813294d4d2544a2a5bfb70856cc05c504e0cf5c0a49060219dc78750390d",
+      "bytes": 2068842
+    },
+    "rl/cons1100_probe_study/D_curriculum_grpo_probe/configuration.json": {
+      "sha256": "28676cd01aafc19111039003b1ce1539835a77559338a1157d689f54d52511cd",
+      "bytes": 9934
+    },
+    "rl/cons1100_probe_study/D_curriculum_grpo_probe/log.jsonl": {
+      "sha256": "259c4a272f475b1a645fb4df58863e86a23e06e66201aec5006c23af8501e3d2",
+      "bytes": 418730
+    },
+    "rl/cons1100_lowinfo_penalty/E_curriculum_grpo_probe_lowinfo/configuration.json": {
+      "sha256": "6727a851c8ec914bfe86dbaeed87061e60debdbff1899ffcc3bf142feda2b67a",
+      "bytes": 10887
+    },
+    "rl/cons1100_lowinfo_penalty/E_curriculum_grpo_probe_lowinfo/log.jsonl": {
+      "sha256": "435b632f6bfb7dc08b223a319dc7608e074173700650d6501d35f18d57c3855e",
+      "bytes": 439806
+    },
+    "baselines/heuristic_random_opening/evaluation.json": {
+      "sha256": "06bcef340ee10365416b2149766270edc77d663be67d0b282572da6c9cd1b606",
+      "bytes": 10855
+    },
+    "baselines/heuristic_distinct_opening/evaluation.json": {
+      "sha256": "d585a8e78cf556f912b8d692c892181609a662778ce273c04de57d9c88c76004",
+      "bytes": 10546
+    },
+    "baselines/heuristic_salet/evaluation.json": {
+      "sha256": "519229d822d02c5a5c84e5b3fe378cf82cf23754c4fc16aa6ae820c755e44ec7",
+      "bytes": 7271
+    },
+    "baselines/random_policy/evaluation.json": {
+      "sha256": "4f52359c7df61eb26527ba89d3acc0dc6312121e522bb5ce019356b84b1b4732",
+      "bytes": 8757
+    },
+    "baselines/zero_shot_qwen/metrics.json": {
+      "sha256": "d56131e22757a40f5577bc9cb5377406d2cd9675c8a6d9d4464b20f654f95158",
+      "bytes": 63636
+    },
+    "heldout/step1100/PSL-head/metrics.json": {
+      "sha256": "faca8c8fc628a28ac85cecbb92776d3bdcbb968a3c8d429fe92dc37a747dc095",
+      "bytes": 62643
+    },
+    "heldout/step1100/PSL-head-consloss/metrics.json": {
+      "sha256": "28b7172d8a155edeceb422dd2b618e441920b4a746c5e42cae9cd2dd512110d7",
+      "bytes": 62027
+    },
+    "heldout/rl_iteration12/D/metrics.json": {
+      "sha256": "dc14388928c7c53d4ddd0e88af1a75135bc51d76272bbac7cf1ace9e07010b45",
+      "bytes": 66726
+    },
+    "heldout/rl_iteration12/E/metrics.json": {
+      "sha256": "2d4b921d6c3551089c9750f1a05db534cab3e02e6f52ec5467150b1102ca6cd9",
+      "bytes": 66721
+    },
+    "heldout/rl_iteration12/starting_checkpoint_endgame.json": {
+      "sha256": "7d4050cf932f99bcf4ef85f6a1af8b271855b4ef38030f086b6b6b285282d1bc",
+      "bytes": 2616
+    },
+    "heldout/step1100/PSL-head/failed_games_enriched.json": {
+      "sha256": "4bb4949f9cd6029ad53d280257199aa269b504aacff542e98fd920b5c7a4082b",
+      "bytes": 7041962
+    },
+    "heldout/step1100/PSL-head-consloss/failed_games_enriched.json": {
+      "sha256": "1d49c204109d1af26e6a9e6265edc492482a5144fd208173a9f5710fd36ce86a",
+      "bytes": 11301715
+    },
+    "sft/data/episodes/stats.json": {
+      "sha256": "9062db1777cfef567aa3759f2e94b0a89bc7bc08b931f0a6bef12d18e99164cc",
+      "bytes": 855
+    },
+    "sft/code/scripts/train_sl.py": {
+      "sha256": "8df11677b1485445cc2b631c4e7830e6ae81f9d2cb7ce65f63f36ed0efd5eabc",
+      "bytes": 16219
+    },
+    "sft/code/scripts/make_salet_data.py": {
+      "sha256": "500083a64e21a88d603f5a02ea052cd10e3a68a1e9fd7806e798eaa88b2bfc37",
+      "bytes": 9028
+    },
+    "sft/code/scripts/prepare_closing_data.py": {
+      "sha256": "0afea3e901cd0471ab51cd95eb4510a8a3a1b90692838d5fa398b9be333198ef",
+      "bytes": 3441
+    },
+    "sft/lm-head-readout/code/wordle_k64/model.py": {
+      "sha256": "cca7d9eb78b1833de638366a48626964dabe6159c4febace4972aa2f63dac9b4",
+      "bytes": 17735
+    },
+    "rl/cons1100_probe_study/code/scripts/train_probe_rl.py": {
+      "sha256": "1f20332558366ae7035ddc1989148a08ac1f1082ca19e7851426453073d3bc4e",
+      "bytes": 16728
+    },
+    "rl/cons1100_lowinfo_penalty/code/scripts/train_probe_rl.py": {
+      "sha256": "894de6bd28c6810f4b7f1154f7e367e53b430292ebff7192c4625d2f97978b1c",
+      "bytes": 19952
+    },
+    "baselines/zero_shot_qwen/common.py": {
+      "sha256": "2185772d784a0eb023720ba4496b7debe2957b0e26614c8067bd67b878d3a9a9",
+      "bytes": 9345
+    },
+    "baselines/comparison_with_pointer_step1100.csv": {
+      "sha256": "fb3a77989e0a1c017fe695be7994e1b02079e7ac729c82e8941bcff9d6905f2c",
+      "bytes": 1030
+    },
+    "heldout/rl_iteration12/endgame_comparison.csv": {
+      "sha256": "d8fb5624dadf4788fe1f1b358b55a00c0f167f863a4afb54cc026c735f73ed65",
+      "bytes": 1014
+    },
+    "heldout/rl_iteration12/order_by_turn.csv": {
+      "sha256": "cb135fe8153204c4e7f7669a7785caca006beeb1bf68b9c37c402e955fe18aa8",
+      "bytes": 1984
+    }
+  },
+  "teacher_dataset": {
+    "rule": "public-singleton-and-offered-v1",
+    "splits": {
+      "train": {
+        "games": 15650,
+        "decisions": 59823,
+        "closing_decisions": 14746,
+        "changed_targets": 1609,
+        "changed_by_turn": {
+          "5": 1609
+        },
+        "source_sha256": "11079059eac52c00e0dd07a398990d3e7ea6b8f86a42e57cc79fefa6bd0abd1a",
+        "sha256": "3fefbd1f540f688083b476db0047abd42344efff2df48233791cd9cd8772aca8"
+      },
+      "validation": {
+        "games": 250,
+        "decisions": 1079,
+        "closing_decisions": 176,
+        "changed_targets": 49,
+        "changed_by_turn": {
+          "5": 49
+        },
+        "source_sha256": "dd7fad12d30a8bd8a982114589741a6e551c44d23fc8f202862c6e86ebf66f96",
+        "sha256": "0f63a5041e8bd273aec3795b6f4242ee8bff67d9478f994e17cb867064770ff9"
+      }
+    },
+    "policy_inputs_changed": false,
+    "trajectories_changed": false
+  },
+  "packaging": "Single shared implementation; machine paths and launch wrappers removed. CPU mechanics tested; no new full-size training results attributed to this refactor.",
+  "notes": [
+    "RL-A is archived run D; RL-B is archived run E. Both histories end after iteration-12 validation.",
+    "RL was originally planned for 24 iterations; this package includes iterations 1\u201312 and recipes ending at 12.",
+    "SFT histories retain all completed updates; the checkpoint column identifies the selected saved weights.",
+    "Wall-clock training timestamps and TensorBoard event files are omitted; elapsed durations and RNG seeds are retained.",
+    "Rates and TV are fractions, unless a column explicitly ends in _pct.",
+    "Selected checkpoints are included locally under checkpoints/. Source hashes refer to the original archive."
+  ],
+  "exports": {
+    "training.csv": {
+      "sha256": "98c48a4dad485f6a7b6d570d9fea03d52f773d3ce89a4d5e80a1f4d2a6c5d12a",
+      "bytes": 2149752
+    },
+    "validation.csv": {
+      "sha256": "923664125cd8d2faf71bef166f1406bdce982942181110bf5fe9aa7aee41ba07",
+      "bytes": 269926
+    },
+    "heldout.csv": {
+      "sha256": "cdfdba0a5036064d48df5898895d6332c543224f070a67be7c1002a3e12d16bd",
+      "bytes": 1324
+    },
+    "order_robustness.csv": {
+      "sha256": "ccfed375e0eb8759648a0cd72c2161408a3a84ad475565c06c5966f20dc441bb",
+      "bytes": 951
+    },
+    "endgame_comparison.csv": {
+      "sha256": "ea4e395c6d8bd0ee59997e8c2902a15fbd37adec3eda4db5cb6b17ecc0329829",
+      "bytes": 1032
+    },
+    "rl_order_by_turn.csv": {
+      "sha256": "7c252271f8f6e537a60b813e693d79ece814cc9f85c2db88f1ffc2e6018fe12c",
+      "bytes": 2026
+    },
+    "heldout_metrics.json": {
+      "sha256": "5af363b1656c9655cf914c1d945beda5515afc1cc980718dba6703c0f77abf82",
+      "bytes": 328279
+    },
+    "failure_examples.json": {
+      "sha256": "0625871e7967b0ae250b1ec7c3e93505a06abde0656cbc120e0aef9176ba64db",
+      "bytes": 182492
+    },
+    "test_victory_turns.csv": {
+      "sha256": "a589d54c760fb63e5902531968b1aa889de02a996e98c8fe23154d13a82cade2",
+      "bytes": 1643
+    },
+    "test_victory_turns_summary.csv": {
+      "sha256": "219a813bd7d97c46d91089741760e74f7876694cff1bafcbd5bb14c2b57aea7e",
+      "bytes": 514
+    },
+    "overall_calibration_comparison.json": {
+      "sha256": "6743c8a951d9483ff7372b50fe2553e8a305ced5ce3d6458ed77bfa165746b76",
+      "bytes": 19933
+    },
+    "overall_calibration_comparison.csv": {
+      "sha256": "85db2ffff0c6c685191c4a7cfe8fd63067b0e2e50977a6d0afc53264aa9bbde7",
+      "bytes": 502
+    },
+    "overall_calibration_comparison_bins.csv": {
+      "sha256": "5d5bfd92e283666a725748dd36820b25d80d26a92f05cd5f0dc6a45930c43790",
+      "bytes": 4980
+    }
+  },
+  "package_verification": {
+    "selected_checkpoint_files_verified": 36,
+    "checkpoint_manifest_sha256": "d955c00bb00ffc261a740c0c0a99a1322d6d2fced25b5349328fc8b1cfa026d6",
+    "cpu_tests_passed": 36,
+    "cpu_test_scope": "Three SFT and two RL recipes: train, validate, save and resume on tiny CPU models; readouts, objectives, environment and evaluation-to-calibration integration.",
+    "training_wall_clock_timestamps_present": false,
+    "tensorboard_event_files_present": false,
+    "sft_and_lm_measurements_preserved_exactly": true,
+    "rl_completed_iterations_per_run": 12,
+    "rl_optimizer_updates_per_run": 96,
+    "original_letterlock_files_unchanged": true,
+    "checkpoint_tensors_unchanged": true,
+    "checkpoint_metadata_edits": "Removed machine-specific path prefixes in both RL metadata files; original hashes retained in checkpoints/manifest.json."
+  },
+  "victory_turn_histograms": {
+    "mean_definition": "Total guesses in won games divided by number of won games; failures excluded.",
+    "bootstrap": {
+      "unit": "answer cluster retaining all three seeds",
+      "replicates": 2000,
+      "seed": 722,
+      "confidence": 0.95
+    },
+    "raw_game_verification": {
+      "PSL-head-consloss @1100": {
+        "complete_games": 1500,
+        "all_three_order_seeds_verified": true,
+        "histogram_matches_raw_games": true,
+        "mean_and_95ci_recomputed_from_raw_games": true,
+        "mean": 4.1883211678832115,
+        "ci": [
+          4.088871228167192,
+          4.294955759722293
+        ]
+      },
+      "RL-A @12": {
+        "complete_games": 1500,
+        "all_three_order_seeds_verified": true,
+        "histogram_matches_raw_games": true,
+        "mean_and_95ci_recomputed_from_raw_games": true,
+        "mean": 4.353142076502732,
+        "ci": [
+          4.249133935731737,
+          4.461547700754976
+        ]
+      },
+      "RL-B @12": {
+        "complete_games": 1500,
+        "all_three_order_seeds_verified": true,
+        "histogram_matches_raw_games": true,
+        "mean_and_95ci_recomputed_from_raw_games": true,
+        "mean": 4.337671232876712,
+        "ci": [
+          4.234074885690956,
+          4.446134182384817
+        ]
+      }
+    },
+    "plot_script": "scripts/plot_test_turns.py",
+    "artifact_sha256": {
+      "scripts/plot_test_turns.py": "8bbe79d608c7618c46c4d53617c61cac4ce6b8590ad53d977398a079d681631f",
+      "report/figures/test_victory_turns.png": "cef7cdb377e2562e72ddf4ecac45970430a19f090c44a2c21c26b59f08d72539",
+      "report/figures/test_victory_turns.pdf": "b2434aa277c617a56b10d0b76503c02c6c9e6c0dc4622f5d16cd1fc8577d7ac1"
+    }
+  },
+  "overall_calibration": {
+    "population": "All played turns; 1,500 complete held-out games per model.",
+    "correct_choice": "Chosen option has maximal public solver continuation win value; all ties count. In public-singleton states, require the known answer immediately.",
+    "bootstrap": {
+      "unit": "answer cluster retaining all turns and all three seeds",
+      "draws": 2000,
+      "seed": 722,
+      "confidence": 0.95,
+      "bin_intervals": "Pointwise percentile CIs, excluding bootstrap samples where the bin is empty."
+    },
+    "verification": "All decisions matched to saved complete-game greedy actions and raw probabilities. Correct-choice labels checked against saved solver values and closing flags; all ECE values and CIs match previous evaluation outputs.",
+    "artifact_sha256": {
+      "scripts/plot_overall_calibration.py": "ba9b3f5e6bdf3201b27d2d8117edaf46220716839fb183f6b0d9296bae4aac8d",
+      "report/figures/overall_calibration_comparison.pdf": "0085a0751450f9851a645c611bcbf249976ea6f599fcad59e0fe55f43c0a94b3",
+      "report/figures/overall_calibration_comparison.png": "ce52c2b1368412ebbb0a2eec026eeba4f20f2629ac9016ac16d360829b2237f6",
+      "report/figures/overall_calibration_psl_head_consloss_1100.pdf": "097645a91a90e5a9df756f5a794e506b2ac2ef2496424379f41003330224fa32",
+      "report/figures/overall_calibration_rl_a_12.pdf": "95005735b5b7bad50c664ad961bebd10e70afbc84b35de404a060c2160a279eb",
+      "report/figures/overall_calibration_rl_b_12.pdf": "f1e69bf8facad9525ad7ae2500176b82207dbd2162ed0d2e4d7a9d5dcc584968"
+    }
+  },
+  "heldout_observations": {
+    "path": "results/heldout_samples.jsonl.gz",
+    "sha256": "468e3aa2048a32cc52ae88e61615e91c91191e30274ea24b24eb3183479e73a6",
+    "games": 13500,
+    "source_sha256": {
+      "baselines/heuristic_random_opening/games.jsonl": "f7c0ad826d46b6b69699e1f1d83a6f9fbcbe42d539db741cc935566630e6fba4",
+      "baselines/heuristic_distinct_opening/games.jsonl": "973b495ef7409cbacddab2af1f6ce924ca1501630e08926e737ed5da6235bb59",
+      "baselines/heuristic_salet/games.jsonl": "503df2f555f9e265ce33aab1eaeab09afa69404ed8af5ad8124b62acc53eb180",
+      "baselines/random_policy/games.jsonl": "dbf7ce46b7030d774ee9e3a2e3fe30f93458c1a9abce1878bf87d25342897ea0",
+      "baselines/zero_shot_qwen/games_seed1001.json": "d16b2d545c61e6d9d11e875f1ddf6391f00a95926d9cfc7712915cc236511f4c",
+      "baselines/zero_shot_qwen/games_seed1002.json": "132bb918b2035fc7c2c06020ff691942162f7613e4d4c9bb3243de2d1d7a6d84",
+      "baselines/zero_shot_qwen/games_seed1003.json": "9414ef7db9060bde1e5e04b112cdb906ef46ee7afec0dfcd6c1f63edae1dc308",
+      "baselines/zero_shot_qwen/analysis_seed1001.json": "3d0413bd013e8e2c1606f9b26994dfbcbde2436063d98f52288a9d3426e7f0cb",
+      "baselines/zero_shot_qwen/analysis_seed1002.json": "2213175ba99f9811202467d7b5dbc88fbc19e6f53bfb1050cb4ab67ce3a9db9f",
+      "baselines/zero_shot_qwen/analysis_seed1003.json": "eaebb2a53208ccc5712eda2f2b74c14296d1e31f5c09ee4822536ea1b0cd7a1d",
+      "baselines/zero_shot_qwen/order/1001_random1.npz": "aa9849abf1958cb6a77c25dee7ffb3ced19bfb8f07e64ee9d28440f54e4aa4e0",
+      "baselines/zero_shot_qwen/order/1001_random2.npz": "15dfd0d9e21eddc9937fd6ca0973b02694dff29bc983e1b94c9479bc402f03f5",
+      "baselines/zero_shot_qwen/order/1001_repeat.npz": "86eda842493ab9d37fd327f89f395dd39b6fd36afc09d124e3d41481f74cc244",
+      "baselines/zero_shot_qwen/order/1001_reverse.npz": "3462af3709d4704bdfcb8dddf77ebba8e58625cbeb60e7bdecfba60bc0a4ccdd",
+      "baselines/zero_shot_qwen/order/1002_random1.npz": "157d7eb8c6c2abb5bedba2a1da2d79ba8f3f894cc719f949c06aeb55bc96da81",
+      "baselines/zero_shot_qwen/order/1002_random2.npz": "cab4d39e834431b2f70eb20ed6e322936a82ea41cae5f0879760c12bae75eb0b",
+      "baselines/zero_shot_qwen/order/1002_repeat.npz": "294fab5958c7326b0acf34418c4cc92356ef1dc83929992999d3b1e9962692b9",
+      "baselines/zero_shot_qwen/order/1002_reverse.npz": "ec4092094d6b8846804aa821e3632227789a8f02da166fcc2be875a13c196055",
+      "baselines/zero_shot_qwen/order/1003_random1.npz": "3315c89aae432cb3332df15026aaf8672426bd0764ce112d91c4f27ecf526e83",
+      "baselines/zero_shot_qwen/order/1003_random2.npz": "15990f976bddb01ec3b6398a41b4074e672dd486b134bce2e2fc3c73adabd936",
+      "baselines/zero_shot_qwen/order/1003_repeat.npz": "ca3320df2f5550eea87f3cab77569629d113c9d81e4a5dfc2ec7fba18c0376b9",
+      "baselines/zero_shot_qwen/order/1003_reverse.npz": "2ff11c28c75706186521db3da69ff8bb4fb4ead61280e7a962aa2c0c49ff6f0b",
+      "heldout/step1100/PSL-head/games_seed1001.json": "6af0ffa3fae0028805f46b2e3236e544920c3bc3922effcc61d119fd75bf0e43",
+      "heldout/step1100/PSL-head/games_seed1002.json": "313aa514d43a96459dc31936107e12951153c4b92d6eadcb9c43206649d395ca",
+      "heldout/step1100/PSL-head/games_seed1003.json": "04f379c925fd79144be09b836787237291217f061fb02b193975a877977c6fa8",
+      "heldout/step1100/PSL-head/decision_analysis.json": "386c3fcb66a94801a8b3ef911e8819aa0b3d567bc4d34517526eb52db3f23d69",
+      "heldout/step1100/PSL-head/order/1001_random1.npz": "67082cfb2f2c7b323488a9785b2944b80e1b877934b9801386d55315bf52a79c",
+      "heldout/step1100/PSL-head/order/1001_random2.npz": "df9bfc7e64be9a9088a358184a20317b5d87fdc4aa85ac9a41d6cb9d6ce56b1e",
+      "heldout/step1100/PSL-head/order/1001_repeat.npz": "cc291ed005f66e657fe273210445c6da98311c9df06a209dd421edb364da80aa",
+      "heldout/step1100/PSL-head/order/1001_reverse.npz": "087cdb3a2a59cc27fe25efc6464613e5b406ad5c43f995371bca3db550d777f3",
+      "heldout/step1100/PSL-head/order/1002_random1.npz": "a3419bae6588c15fb84a254743e069275a009b62e3cd6dcd09962f8c9b5ef06d",
+      "heldout/step1100/PSL-head/order/1002_random2.npz": "fb64bcf73f1f7e434be8d8267280a6b0cfecf1dac55e4d7a3fa0361086e1f8f7",
+      "heldout/step1100/PSL-head/order/1002_repeat.npz": "1c420ed892d77d9f7f919b100e66874cbeae090e8648d09f783d0fa707a4acd2",
+      "heldout/step1100/PSL-head/order/1002_reverse.npz": "786d3279af2035873e88ce5938a8ff80e2b9f1f2855905fdb876be651d3069fc",
+      "heldout/step1100/PSL-head/order/1003_random1.npz": "f7a9ad8c43668b441493be25fec45db0f68cbc07368d46c46b336c74245b4fb4",
+      "heldout/step1100/PSL-head/order/1003_random2.npz": "281d44eea0fc5dd53935be5affa59ef630a6f0873bbb3252540ac19ba06a6062",
+      "heldout/step1100/PSL-head/order/1003_repeat.npz": "4bb6f1155eb16872d22cb5679560e6970c87c94777e65cfe94fbb61471e1f2f1",
+      "heldout/step1100/PSL-head/order/1003_reverse.npz": "8e6cc957620cdb0074444e21194332a9de0d0a081e6acae0412b84177d51b9e8",
+      "heldout/step1100/PSL-head-consloss/games_seed1001.json": "8055ea88738612bbf61880956855910fac51515f70fb2a224544949f1e98433a",
+      "heldout/step1100/PSL-head-consloss/games_seed1002.json": "116c802aee2773d92e0119c495b3f204329747aa307c687013d91f7147299133",
+      "heldout/step1100/PSL-head-consloss/games_seed1003.json": "797b8167d2634c144a90a35cd3a2ea5d5c28d5bd06651968348dc79f1da370c4",
+      "heldout/step1100/PSL-head-consloss/decision_analysis.json": "b5626869dc4887234fb5c9c2c738357bdcd1f6552e73da84f82f9996f8c7bff8",
+      "heldout/step1100/PSL-head-consloss/order/1001_random1.npz": "67904d3fda0b9eee3888dc10dff300db897ccf1c596ea52e6278deab9d05cdb4",
+      "heldout/step1100/PSL-head-consloss/order/1001_random2.npz": "5241bbd85d6357eb4ed8e76c5e3a5d17233c1327ce38c2dfdd5682eb49da92ed",
+      "heldout/step1100/PSL-head-consloss/order/1001_repeat.npz": "86d7cd9f8d9d1eb08262cbab3edf8d936065d679eef5fdee882d78fb30954c8c",
+      "heldout/step1100/PSL-head-consloss/order/1001_reverse.npz": "5a73fd35ff1aa65dc69d587f986c473bfed391d8ebb5725d9d96377d506f593b",
+      "heldout/step1100/PSL-head-consloss/order/1002_random1.npz": "a0869201107918d2911de80e47895cb1094c6e5fd4c287ae28f0f79f81fb2806",
+      "heldout/step1100/PSL-head-consloss/order/1002_random2.npz": "7da6c89dc18384bb901d2be6f5e9af302b281bca3c0decb22c73e82c0a664fdb",
+      "heldout/step1100/PSL-head-consloss/order/1002_repeat.npz": "1dba8433cb77680024c6a5214b5775a1603719cf776ea9c06b47a0109b182484",
+      "heldout/step1100/PSL-head-consloss/order/1002_reverse.npz": "577f3f1aec141267b738e9829cdd0eed0d3465b207e2a3d4df0e1a9489afee32",
+      "heldout/step1100/PSL-head-consloss/order/1003_random1.npz": "0eaee8495fc54d205c4d3e42b4a43f5fa34c6703e6f183dc4d83addf3ec35d78",
+      "heldout/step1100/PSL-head-consloss/order/1003_random2.npz": "edd5ad3d27dbdd0b61cb1df9b9e276464ca6735cb05cce523db2366e00427d3e",
+      "heldout/step1100/PSL-head-consloss/order/1003_repeat.npz": "7f44ab035db4ef271dd15e78d1f04ec8578ae81626c193b7aa84e4f5f845299a",
+      "heldout/step1100/PSL-head-consloss/order/1003_reverse.npz": "04262779789877386e1cacc6b60afc735920fdbfe1089200e3e73b52bf508903",
+      "heldout/rl_iteration12/D/shards/1001_1002/games_seed1001.json": "116cb3e115c2b6f8b767a648229cd8b3e9240eb355148c2360aa13f9b34db424",
+      "heldout/rl_iteration12/D/shards/1001_1002/games_seed1002.json": "14a880c776f38edb8eeadb60ccd6f457859dc1d4beae5791f18591c0ee97813c",
+      "heldout/rl_iteration12/D/shards/1003/games_seed1003.json": "70899d51bf248f9b59fafc8a8b4db034e8356441a411e6b728379c2b79226608",
+      "heldout/rl_iteration12/D/decision_metrics.json": "9ab9979107add6d481e1595b2ce3701af8715f74eddd2aa7fef0f630548783b5",
+      "heldout/rl_iteration12/D/shards/1001_1002/order/1001_random1.npz": "a0b7ad420029300a583d2c1f53da938ada1f7aa8c1ad157f8931ddba1c0eb587",
+      "heldout/rl_iteration12/D/shards/1001_1002/order/1001_random2.npz": "ff9cd983d26f5266000345978d6fec34d5f6105e4e4ecd617f2729df72e4584d",
+      "heldout/rl_iteration12/D/shards/1001_1002/order/1001_repeat.npz": "396c0ecebddb399005278e366fbcde21ade687242df8fb88e534e7c0dde4ed77",
+      "heldout/rl_iteration12/D/shards/1001_1002/order/1001_reverse.npz": "ee39b9819c487db221859a542f6e12d4afe61faca371d77fcd75e15f42c3d109",
+      "heldout/rl_iteration12/D/shards/1001_1002/order/1002_random1.npz": "7b5b6eb2c4e71665cb7ada72fd827e9d0b078ccc1f1f71bc78e29e73d0e953cd",
+      "heldout/rl_iteration12/D/shards/1001_1002/order/1002_random2.npz": "e8cd94ddfcc2f7e7605da2adf2e70fd65bddfeeb6ab17c2ce9aa6a4753a578fe",
+      "heldout/rl_iteration12/D/shards/1001_1002/order/1002_repeat.npz": "8e9fa8d0bdb73520b04387a520bcc6d6d02d9a4aa36ce76ce83290e9cd5dc190",
+      "heldout/rl_iteration12/D/shards/1001_1002/order/1002_reverse.npz": "b81a912a8772cb4d3b773419c33304fb9c3f236e1059c2f3060ee6dcc5653b88",
+      "heldout/rl_iteration12/D/shards/1003/order/1003_random1.npz": "444191c9469790b276228197a4fb2bd8e921e77604d0c0744e51309da66f8200",
+      "heldout/rl_iteration12/D/shards/1003/order/1003_random2.npz": "a7ccc7c4f7a30e0289077eb03d25e8c5befb508ebfdf236b1d4226ed8dd7405c",
+      "heldout/rl_iteration12/D/shards/1003/order/1003_repeat.npz": "b9667447b9d6b391b6c96c06e789f67bee12fba3fd67b58d57bd0d4e7465f767",
+      "heldout/rl_iteration12/D/shards/1003/order/1003_reverse.npz": "2a1507a4b18335c616709b3fbf3e346d1cf9e6c406b799c1fefcb8d1ef5a83b1",
+      "heldout/rl_iteration12/E/shards/1001_1002/games_seed1001.json": "b42e9903de6657f8980ac60fa816afc80b23f1ff5e75c349ba30f3d748c01e82",
+      "heldout/rl_iteration12/E/shards/1001_1002/games_seed1002.json": "e1ed01cbc229ccbfec0aad83648d48003ac88392cfb241a4ff5219392433051f",
+      "heldout/rl_iteration12/E/shards/1003/games_seed1003.json": "21415aa634e98d6a88fe19a3227215ccb354631103967599716589dabb6e9fde",
+      "heldout/rl_iteration12/E/decision_metrics.json": "03e8b353dca200189fcd61da8c241f0f4a40692a8badf483aab1ec6930807441",
+      "heldout/rl_iteration12/E/shards/1001_1002/order/1001_random1.npz": "751e68af12f6ce4b101e2d6bc9e4c1b1995bed01e3615fb069dccfd19d76fb5e",
+      "heldout/rl_iteration12/E/shards/1001_1002/order/1001_random2.npz": "d23c0d988c0061ee5f1f0d8c8932b13bed92c10b6c3cc46be72f93fbc9c72534",
+      "heldout/rl_iteration12/E/shards/1001_1002/order/1001_repeat.npz": "ec204e6360857dc485c5a65c148ace4a4b8dceadc03d0c5dfc9bf9706358f41c",
+      "heldout/rl_iteration12/E/shards/1001_1002/order/1001_reverse.npz": "c404e78faef4b434c2cc7d33558d9e81eb8cca440d866db56224a3fe2b1e0037",
+      "heldout/rl_iteration12/E/shards/1001_1002/order/1002_random1.npz": "f9f26dad32aac1fbacaf77be759919f3ef06bf2765b1ee929525230694904a50",
+      "heldout/rl_iteration12/E/shards/1001_1002/order/1002_random2.npz": "45525105eae87b7eabb6c7194f4a23a71421c0ddb3688e1ae5de451818770f78",
+      "heldout/rl_iteration12/E/shards/1001_1002/order/1002_repeat.npz": "51cefa1c095b09319f31425629ed74f0a7458a44a1b69ba8001252bcaadc9566",
+      "heldout/rl_iteration12/E/shards/1001_1002/order/1002_reverse.npz": "7be8ce14e0a4db745828664652cc3fd4648c83d4a346bdb141410353f74dcfd5",
+      "heldout/rl_iteration12/E/shards/1003/order/1003_random1.npz": "415ee6f599ef8c29f727531f2c843ef4609a8d6b8c3977ed2e49f8acf66c809d",
+      "heldout/rl_iteration12/E/shards/1003/order/1003_random2.npz": "5dd573a7407e37ed8051d00fdccbdc3cc13715ad0836e2ee8c756c685042b59f",
+      "heldout/rl_iteration12/E/shards/1003/order/1003_repeat.npz": "c53e7a515785671bddd8f45d305fa94c8abfef4ffed9d48b1961b9711380ace2",
+      "heldout/rl_iteration12/E/shards/1003/order/1003_reverse.npz": "d65f998a3f8512abed26f9ca427c5dff1d961a331c214a2727d0ba3d721e2fa3"
+    },
+    "contents": "Complete guess/feedback trajectories, selected confidence, public solver labels, and each word-aligned order comparison. Dense model logits omitted; rerun evaluate.py to regenerate them."
+  },
+  "public_release_audit": {
+    "full_teacher_regeneration": {
+      "training_games": 15650,
+      "validation_games": 250,
+      "training_decisions": 59823,
+      "validation_decisions": 1079,
+      "matches_archived_episode_content": true,
+      "semantic_hashes_verified": true
+    },
+    "fresh_cpu_baselines": {
+      "games_per_policy": 1500,
+      "all_6000_trajectories_match_archive": true,
+      "means_and_confidence_intervals_match": true,
+      "wins": {
+        "random": 50,
+        "heuristic-random": 1215,
+        "heuristic-distinct": 1242,
+        "heuristic-salet": 1284
+      }
+    },
+    "heldout": {
+      "policies": 9,
+      "complete_games_replayed": 13500,
+      "model_decisions": 34666,
+      "raw_order_comparisons_recalculated": 138664,
+      "recounted_metrics": [
+        "wins",
+        "win_rate",
+        "mean_guesses_among_wins",
+        "guess_histogram",
+        "closing_aware_ECE",
+        "flip_rate",
+        "mean_TV",
+        "same_order_controls",
+        "probe_accuracy",
+        "missed_turn5_guarantees",
+        "closing_accuracy"
+      ],
+      "confidence_intervals": "2000 answer-cluster bootstrap samples, seed 722; matched within 1e-12",
+      "replay_checks": [
+        "frozen test membership",
+        "complete games",
+        "exact candidate order and action",
+        "BGY feedback",
+        "public posterior sizes",
+        "probe eligibility",
+        "closing labels",
+        "exact turn-five values"
+      ]
+    },
+    "histories": {
+      "training_rows": 4451,
+      "validation_rows": 94,
+      "all_updates_and_validation_stages_present": true
+    },
+    "checkpoints": {
+      "tensor_files_hash_verified": true,
+      "all_tensors_finite": true,
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "adapted_modules": 190,
+      "both_frozen_RL_references_equal_starting_SFT": true
+    },
+    "portability": {
+      "all_12_script_help_commands_passed": true,
+      "wheel_build_and_external_data_loading_passed": true,
+      "all_three_plot_commands_passed": true,
+      "plot_CSVs_reproduced_exactly": true,
+      "archive_exporter_reproduces_all_eight_data_files": true,
+      "checkpoint_git_lfs_rules_verified": true,
+      "credential_pattern_scan_passed": true,
+      "machine_paths_removed": true,
+      "report_main_tex_and_pdf_excluded": true
+    },
+    "limits": "No new full-size Qwen inference or training was run in this audit. Model-level smoke tests used tiny CPU models; reported predictions were checked against raw archived records and selected checkpoint hashes. Earlier-turn solver search was not rerun during compact replay.",
+    "artifact_sha256": {
+      ".gitattributes": "18a44a2ccb3e4881630c20d80cc0e72624d8eb1fc9410ede43d48c9ea82a35e9",
+      ".gitignore": "02c76bbc48d1b40a0150525ae8777831b8332558277fbad7e654925e873dcace",
+      "README.md": "87b595992e257257b03906de4047e0d3be2b2c8acf96d9c6c7b17f8f78343a05",
+      "configs/rl.json": "b991fd6556113113d72d83bfa4e98b5427a3d0d7dbb71e1966b5ee4315a73410",
+      "configs/sft.json": "57e6eba7543c1c9993a0916a4dbd1b1ff3bffd12e3c550c67ef0576030f5952e",
+      "data/teacher_manifest.json": "7705973b62b3bcda25dfc96063febbb7b7ec98567872843b2faf6a6832bb60f0",
+      "pyproject.toml": "8b1d3a0a75629d956ea5274ae71347b10815af64e305a603a6d1d37412ddbb85",
+      "scripts/_common.py": "e25b12e630cc43e96110a9bcf1e8fc2b9efd5efb6a753f3c2f6326fab32e72ae",
+      "scripts/calibration.py": "d65963f454380d6ffa0c5c8cb75fd2a0ecc6994dd0a83153f2827b24382882cc",
+      "scripts/evaluate.py": "4f8db7d631cd1b27e60573d3ec7a9a257f645cf68aebf8a6cfa7c8740abbfef9",
+      "scripts/export_results.py": "9899f97bbd0aca4af59679bc984efa74c25ffea2243d57818ac838ad67ff0e08",
+      "scripts/freeze_pool.py": "2ef26cf08e19a72561033c61b886d2c3e4078b0ad6020354c77d70cbe7d270c6",
+      "scripts/make_data.py": "4b6eab6abb23865335c09f2db6f3308e24c380bd9146b2f170042cdd52fe02cc",
+      "scripts/mine.py": "eec49b6e3a64df2f2a0ed6b3633f192ee49985aa234035bd630a84cb12e9270c",
+      "scripts/plot_calibration.py": "97f5d4f4d10914c4db05b363b91c5b034fc6e792944ed088ff837079de6bab41",
+      "scripts/plot_overall_calibration.py": "ba9b3f5e6bdf3201b27d2d8117edaf46220716839fb183f6b0d9296bae4aac8d",
+      "scripts/plot_test_turns.py": "8bbe79d608c7618c46c4d53617c61cac4ce6b8590ad53d977398a079d681631f",
+      "scripts/train_rl.py": "623ab89c8443eaa7efafda4e1d9f1a239182ffbfd6d90f3cc1c3586e3e4cda55",
+      "scripts/train_sft.py": "569f159807c90ad5529462f5437e4bfe336ff11b5317906086db9f0cb765056a",
+      "scripts/verify_results.py": "995a3591ffbc24c30fb6758db993a417316d058049628505764ca62088dcb98d",
+      "tests/conftest.py": "ebcf153bd7873a31147568f80f65e0f5d64ee6a709a3c6774455f346ccbcf580",
+      "tests/test_commands.py": "459fcec1379ed4f45e9d64bdd27ca1e024fe0815f8606350fa493d27d3628218",
+      "tests/test_environment.py": "344866c39e6da3394294b3245974bef1fba12d7781e5725c99c98246c2a2b38a",
+      "tests/test_lm_head_readout.py": "b7bb0171f8cf7341a29434aa7869d22253793bec353ddb08a739620890a95477",
+      "tests/test_low_information.py": "af79180a3e3d6abca32472718c57fb64dbd0f4f628fdbaebac2691483db757b7",
+      "tests/test_pointer_closing.py": "efdac1a02a0a750822032ad521f38275d0d9925eb07a6fa090bd10fb30c02be3",
+      "tests/test_probe_study.py": "f06da806d4eb0e949e1dd3fdddd850a660b9cb26517b2edb00a6cdc698e7e348",
+      "tests/test_sl_objectives.py": "c156feb844077618d2c809251fa217c509bec8663e6fdc21d4fa2cdc0e9ee71b",
+      "tests/tiny_model.py": "1a7b6c274057faf36485d987945fa2e06db863d2eae29614dca349b4d23439cf",
+      "wordle_k64/__init__.py": "563a40ec48e9755de7616828f293911f8f68d33dc217c6817eed0ed0cc629eb2",
+      "wordle_k64/baselines.py": "50b35242580e5a5dfb388a63a9198e5a6ea3ff5e919e44c3899d5eae7b2be9bc",
+      "wordle_k64/checkpoint.py": "6cdfc5eec2fb2bcd05cb6d6fe79e1f4c65a2657379d907634a9486f74b6b3fc0",
+      "wordle_k64/closing.py": "0b620791dbc87c42e7076ed6c5fe696aeffe9b60aaf5fc601c80a3869a1afe32",
+      "wordle_k64/contracts.py": "30fdf8bc5a1cb91e5b8a48d6ac5edb6bf376736d3e38e6d29457b3c047c10bdc",
+      "wordle_k64/endgame_feedback.py": "52d64856eb7b6bcfbbf403f4b9e2eb2d69368dedcdcc734774307e4ed084607e",
+      "wordle_k64/environment.py": "d8505a94d641bb410cc95db1c4e1ba417c74b4b9065f8e1089d2c3750758dc73",
+      "wordle_k64/lm_head_readout.py": "65608f5200c2e763658c4d06c05e3c62bd864ada92f3c858b6e46f83659eb725",
+      "wordle_k64/low_information.py": "1831092eebc6b89f91f32e5b4daac24f9a71d165bfb972dda2dd9eeb5f2a96e3",
+      "wordle_k64/model.py": "e5094a03cca73db3a8cb71c5df2fa14d7b469770f1a73c458414c83ce9b4a187",
+      "wordle_k64/planner.py": "dc02bb30cfe2f1a51d04ecb6c54d92d574ba17be5dd7d5bb5ca8dea42a255700",
+      "wordle_k64/probe_study.py": "20d6d3593dd01f392a9d0cdbdf0f50cee576509c9ad5f8c23360c5c2fd442b64",
+      "wordle_k64/probe_validation.py": "96a8000f4f302efe217264c29724ca77b68cabf76a86584adbd48bed659e9545",
+      "wordle_k64/readout_diagnostics.py": "d32ff31ef01875f292a53eec6a37b0361572e33b63cf76564ee0711231280d37",
+      "wordle_k64/rollout.py": "951452ee5bd4c04f3a0bfbce1f81bf9053a4c50698961ebea2f1793efbc6e84a",
+      "wordle_k64/sampler.py": "8417742aff6f2d834b292d271881880bb2e2ff53136f950a42dbf149e743c4e9",
+      "wordle_k64/sft_validation.py": "050d18517616a613d7a86c3f8990e9922755e9e01370fea2b73ebf9cc55b425b",
+      "wordle_k64/sl_objectives.py": "f9e251f2a9c7a6e76e4ed395c3d462827dc5b289017908ab78c593bbc22b41fc",
+      "wordle_k64/teacher.py": "868657c1b7d914f7c8a24a38736e9652372469c8f05f0d16586a4c5a013947a5"
+    }
+  }
+}

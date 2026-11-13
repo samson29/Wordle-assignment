@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "letterlock-k64"
+version = "0.1.0"
+description = "Complete-game Wordle experiments with pointer and vocabulary-label readouts"
+requires-python = ">=3.11"
+dependencies = [
+  "torch==2.10.0", "transformers==5.22.2", "peft==0.21.2",
+  "accelerate==1.15.0", "numpy==2.4.6", "tokenizers==0.23.3",
+  "safetensors==0.8.0", "Jinja2==3.1.6",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+plot = ["matplotlib==3.11.2"]
+gpu = ["flash-linear-attention==0.6.0", "causal-conv1d==1.7.0", "triton==3.6.0"]
+
+[tool.setuptools.packages.find]
+include = ["wordle_k64*"]
+
+[tool.setuptools.package-data]
+wordle_k64 = ["data/*.txt", "data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

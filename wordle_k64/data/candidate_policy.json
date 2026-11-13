@@ -1,0 +1,20 @@
+{
+  "version": "explore-or-guess-k64-root9-v3",
+  "k": 64,
+  "consistent_slots": 1,
+  "weak_search_width": 16,
+  "probe_slots": 8,
+  "distractor_slots": 55,
+  "max_guesses": 6,
+  "candidate_membership": "deterministic from public history and dictionary",
+  "presentation_order": "shuffled independently by seed, episode ID, and public history",
+  "consistent_selection": "recursive minimization of consistency-only success over the 16 lowest-entropy surviving answers; exact enumeration of surviving guesses with two turns remaining",
+  "probe_selection": "8 highest-entropy allowed nonanswers, excluding previous guesses",
+  "distractor_selection": "55 uniform allowed nonanswers, excluding probes and previous guesses, using a public-history-derived seed",
+  "secret_access": false,
+  "model_inputs": "public guess-feedback history, attempts remaining, shuffled candidate words only",
+  "first_turn_consistent_slots": 0,
+  "first_turn_probe_slots": 9,
+  "later_turn_policy_id": "33b2ee7c0ece0043d9ced654cdd013a427af4b73b19451f299a2bbdc65c6887b",
+  "first_turn_rule": "9 highest-entropy allowed nonanswers plus 55 distractors; no forced action"
+}

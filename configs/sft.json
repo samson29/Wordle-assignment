@@ -1,0 +1,40 @@
+{
+  "common": {
+    "rank": 16,
+    "alpha": 32,
+    "head_seed": 20261115,
+    "seed": 20261115,
+    "lr": 0.0001,
+    "consistency_seed": 20261118,
+    "micro_batch": 1,
+    "warmup": 20,
+    "epochs": 1,
+    "games_per_step": 4,
+    "eval_secrets": 250,
+    "eval_seeds": [
+      1001,
+      1002
+    ],
+    "eval_batch": 8,
+    "eval_every": 50,
+    "save_every": 10,
+    "diagnostic_data": "data/episodes/validation.jsonl"
+  },
+  "experiments": {
+    "PSL-head": {
+      "architecture": "pointer",
+      "head_lr": 0.0002,
+      "consistency_coef": 0.0
+    },
+    "PSL-head-consloss": {
+      "architecture": "pointer",
+      "head_lr": 0.0002,
+      "consistency_coef": 0.05
+    },
+    "LM-head": {
+      "architecture": "lm_head",
+      "head_lr": 0.0001,
+      "consistency_coef": 0.0
+    }
+  }
+}

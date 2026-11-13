@@ -1,0 +1,110 @@
+{
+  "common": {
+    "environment_contract": {
+      "split_sha256": "3e61844360a38ac2c8517f1e679dd890793b5b3467b91513537ed1f76b554796",
+      "environment_sha256": "e4eed5e09a489e3844300f855ed2b2843df68953ca5c0b06aad6f56c921f121e",
+      "readout": "character-or-contextual-pointer-v2",
+      "candidate_policy_sha256": "dd464557ac6fd21536f9a9470d367ea87223b2d07dad0380ed66a2def8abcd27"
+    },
+    "seed": 2026111301,
+    "iterations": 12,
+    "secrets_per_iteration": 16,
+    "games_per_secret": 8,
+    "games_per_iteration": 128,
+    "new_training_games": 1536,
+    "games_per_optimizer_update": 16,
+    "optimizer_updates_per_iteration": 8,
+    "optimizer_updates_total": 96,
+    "sampling_temperature": 1.2,
+    "optimizer": {
+      "name": "AdamW",
+      "lora_lr": 1e-05,
+      "head_lr": 2e-05,
+      "weight_decay": 0.0,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "schedule": "linear warmup for 16 optimizer updates, then constant",
+      "warmup_updates": 16,
+      "global_gradient_clip_norm": 1.0
+    },
+    "ppo_ratio_clip": 0.2,
+    "reference_kl": {
+      "coefficient": 0.05,
+      "direction": "KL(current || frozen starting checkpoint)",
+      "exact_over_all_options": true,
+      "temperature": 1.0,
+      "normalization": "sum over observed decisions divided by (6 * complete_games_in_update)",
+      "freeze": "both LoRA adapter and pointer head; never move reference"
+    },
+    "consistency": {
+      "coefficient": 0.05,
+      "temperature": 1.0,
+      "loss": "0.5 * (KL(p || word-aligned q) + KL(word-aligned q || p))",
+      "permutations_per_training_request": 1,
+      "normalization": "sum over observed decisions divided by (6 * complete_games_in_update)"
+    },
+    "probe_auxiliary": {
+      "coefficient": 0.1,
+      "target_source": "postgame public history, all 2315 public answers, offered words; never actual secret",
+      "eligibility": "turn == 5 and N > 2 and max(Q5) > max(Q5 of offered consistent words) + 1e-12",
+      "value": "Q5(a) = number of nonempty exact-feedback buckets induced on S by a / len(S)",
+      "target": "all offered actions within 1e-12 of maximum Q5",
+      "loss": "-log(sum(policy_probability[a] for a in optimal_set)) at temperature 1",
+      "normalization": "mean over eligible states in these completed games, separate from easy states",
+      "empty_eligible_set": "zero loss; explicitly log zero count"
+    },
+    "validation": {
+      "iterations": [
+        0,
+        4,
+        8,
+        12
+      ],
+      "split": "validation",
+      "secrets": 250,
+      "seeds": [
+        1001,
+        1002
+      ],
+      "games": 500,
+      "greedy": true,
+      "order_flip_population": "every decision in every validation game",
+      "order_permutations": [
+        "reverse",
+        "random_1",
+        "random_2"
+      ],
+      "same_order_noise_floor": true,
+      "mean_tv": "mean of 0.5 * sum(abs(p-q)) over word-aligned permuted distributions",
+      "retain_checkpoint_at_every_validation": true,
+      "also_save_rolling_last_after_each_iteration": true
+    }
+  },
+  "experiments": {
+    "RL-A": {
+      "arm": "RL-A",
+      "curriculum": {
+        "hard_secret_fraction": 0.5
+      },
+      "reward": {
+        "win": 1.0,
+        "loss": 0.0,
+        "low_information_penalty_per_turn": 0.0
+      }
+    },
+    "RL-B": {
+      "arm": "RL-B",
+      "curriculum": {
+        "hard_secret_fraction": 0.5
+      },
+      "reward": {
+        "win": 1.0,
+        "loss": 0.0,
+        "low_information_penalty_per_turn": 0.1
+      }
+    }
+  }
+}
